@@ -1,101 +1,73 @@
 <div align="center">
+<img src="assets/fursa-cover.svg" alt="FURSA AI — Your Skills, Your Future" width="100%"/>
 
-# 🎓 FURSA AI
-### Your Skills · Your Future
+<br/>
 
-**A student profile is more than a prediction.**  
-Explore the factors associated with placement, discover learning priorities, and test *what-if* scenarios.
+**A machine learning project for student career exploration**
 
-[![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
-[![Bilingual](https://img.shields.io/badge/Interface-Arabic%20%2B%20English-0D9488?style=for-the-badge)](#-the-experience)
-
-**[Explore the app](#-run-locally) · [See evaluation](#-evaluation-with-context) · [الشرح بالعربي](README_AR.md)**
+[THE IDEA](#the-idea) &nbsp; / &nbsp; [THE EXPERIENCE](#the-experience) &nbsp; / &nbsp; [THE APPROACH](#the-approach) &nbsp; / &nbsp; [RUN LOCALLY](#run-locally) &nbsp; / &nbsp; [بالعربي](README_AR.md)
 
 </div>
 
 ---
 
-## ✨ The idea
+<a id="the-idea"></a>
+<table><tr><td width="11%" valign="top"><h2>01</h2></td><td>
 
-> **“I have a degree. What should I improve next?”**
+## A degree is a beginning. Not a roadmap.
 
-FURSA AI is an educational machine-learning project that looks at student-related factors associated with **placement status** in a synthetic dataset. Its Streamlit interface combines a model-estimated score with **separate, rule-based educational targets** to suggest practical areas for growth.
+Finishing university doesn't always make the next step obvious. Which skills need attention? What can a student improve? Where should they start?
+
+**FURSA AI** explores patterns associated with student placement in a **synthetic dataset**. A bilingual Streamlit application brings a placement-model score and a separate, transparent skill-development guide into one experience.
+
+> **Not “Will I succeed?” — but “What can I work on next?”**
+
+</td></tr></table>
+
+<a id="the-experience"></a>
+<table><tr><td width="11%" valign="top"><h2>02</h2></td><td>
+
+## One profile. Several perspectives.
 
 <table>
-<tr><td width="33%" align="center"><b>01 · UNDERSTAND</b><br/>Enter a student profile</td><td width="33%" align="center"><b>02 · EXPLORE</b><br/>See model output and learning targets</td><td width="33%" align="center"><b>03 · EXPERIMENT</b><br/>Try changes and compare scores</td></tr>
+<tr><td width="50%"><b>PROFILE ANALYSIS</b><br/><sub>Enter 10 academic, technical, practical and professional inputs.</sub></td><td><b>MODEL SCORE</b><br/><sub>See the classifier's score for the dataset's <code>Placed</code> class.</sub></td></tr>
+<tr><td><b>SKILL DEVELOPMENT</b><br/><sub>Check eight illustrative educational targets and receive rule-based next steps.</sub></td><td><b>WHAT-IF EXPERIMENTS</b><br/><sub>Try additional projects, internships or programming improvement and compare model scores.</sub></td></tr>
 </table>
 
-## 🧭 The experience
+<sub>Arabic / English interface · Streamlit · Educational exploration</sub>
 
-| Feature | What it actually does |
+</td></tr></table>
+
+<a id="the-approach"></a>
+<table><tr><td width="11%" valign="top"><h2>03</h2></td><td>
+
+## Inside the model
+
+**DATA → PREPROCESS → COMPARE → SELECT → EXPLORE**
+
+The repository includes the study notebook, a student-career dataset, training outputs, comparison artifacts and the running Streamlit app.
+
+| Component | Implementation |
 |:--|:--|
-| 📝 **Student profile** | Collects 10 inputs covering academics, technical skills, practical experience and professional skills |
-| 📊 **Model score** | Uses the saved classifier's `predict_proba` output for the **Placed** class |
-| 🟢 **Strengths & growth areas** | Compares 8 of the profile attributes with **illustrative educational targets**, not verified hiring requirements |
-| 🧩 **Action plan** | Offers rule-based suggestions for a few priority areas |
-| 🔁 **What-if simulator** | Adds 0–3 projects, 0–2 internships, or 0–3 programming points and recalculates the model score |
-| 🌐 **Bilingual interface** | Arabic and English UI in Streamlit |
+| Target | `Placement_Status` — Placed / Not Placed |
+| Data | Synthetic student-career dataset |
+| Form inputs | CGPA, programming, problem solving, projects, internships, certifications, communication, English proficiency, resume score, interview score |
+| Engineered features | `Soft_Skills_Average`, `Practical_Exposure_Score` |
+| Compared algorithms | Logistic Regression, Decision Tree, Random Forest, KNN |
+| Application artifacts | `milestone3_outputs/best_placement_model.pkl` and `preprocessor.pkl` |
 
-### From data to direction
+**Model evaluation is not personal assessment.** The repository contains artifacts from multiple experiments; they must not be mixed as one run. Consult [the comparison file](model_comparison.csv), [nested CV summary](nested_cv_summary.csv), [root metrics](metrics.json) and [Arabic results notes](RESULTS_AR.md) with their respective evaluation context.
 
-```mermaid
-flowchart LR
-    A["Student inputs"] --> B["Preprocessing & engineered features"]
-    B --> C["Saved placement model"]
-    C --> D["Model score"]
-    A --> E["Educational target checks"]
-    E --> F["Strengths & growth priorities"]
-    F --> G["Action suggestions"]
-    A --> H["What-if changes"]
-    H --> B
-```
+<div align="center"><img src="milestone3_outputs/09_learning_curve.png" alt="Learning curve from experiment outputs" width="79%"/><br/><sub>Experiment artifact included in this repository</sub></div>
 
-*The prediction pipeline and educational recommendation rules are separate components.*
+</td></tr></table>
 
-## 🧠 Under the hood
+<a id="run-locally"></a>
+<table><tr><td width="11%" valign="top"><h2>04</h2></td><td>
 
-**Dataset:** `student_career_success_dataset.csv` · supplied as a synthetic student-career dataset.  
-**Outcome:** `Placement_Status` (Placed / Not Placed).  
-**Inputs used in the Streamlit form (10):**
+## Run the experience
 
-| Academic & technical | Practical | Professional |
-|:--|:--|:--|
-| CGPA | Projects Completed | Communication Skills |
-| Programming Skill | Internships | English Proficiency |
-| Problem Solving | Certifications | Resume Score |
-| | | Interview Score |
-
-The app also derives `Soft_Skills_Average` and `Practical_Exposure_Score` before preprocessing. The notebook explores data cleaning, visualization, feature engineering, model selection and evaluation.
-
-**Compared families:** Logistic Regression · Decision Tree · Random Forest · K-Nearest Neighbors.  
-**Saved application model:** the included `milestone3_outputs/best_placement_model.pkl` with `preprocessor.pkl`. The app loads these files rather than retraining on each launch.
-
-## 📈 Evaluation, with context
-
-The repository includes multiple evaluation artifacts generated during different experiments. **Do not treat them as interchangeable runs.** In particular, `metrics.json`, `model_comparison.csv`, and `RESULTS_AR.md` currently report different experiment summaries.
-
-| Metric in root `metrics.json` | Reported value |
-|:--|--:|
-| Test accuracy | **78.16%** |
-| Balanced accuracy | **73.57%** |
-| Macro F1 | **0.7109** |
-| ROC AUC | **0.8067** |
-
-These are **reported internal dataset results**, not verified performance on new real-world graduates. See [`metrics.json`](metrics.json), [`model_comparison.csv`](model_comparison.csv), [`nested_cv_summary.csv`](nested_cv_summary.csv), and [Arabic results notes](RESULTS_AR.md) for the distinct summaries and evaluation context.
-
-<div align="center">
-
-![Learning curve](milestone3_outputs/09_learning_curve.png)
-
-<sub>Experiment visualization included in the repository; not a separate external validation.</sub>
-
-</div>
-
-## 🚀 Run locally
-
-**Prerequisites:** Python 3.11 or 3.12 and Git.
+Use Python **3.11 or 3.12**.
 
 ```bash
 git clone https://github.com/Ramaalodat/REBUILD_AI1.git
@@ -104,54 +76,51 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py --server.port 8502
 ```
 
-Open **http://localhost:8502**. The bundled model artifacts are required and already included in `milestone3_outputs/`.
+Open **http://localhost:8502**. The application loads its bundled trained model; no retraining is needed for a local demo.
 
-> **Reproduce the study:** Open `Fursa_AI_Balanced.ipynb` in Jupyter, select an environment with the requirements installed, then execute the cells in order. Training and tuning are separate from launching the app.
+To explore the experiments, open `Fursa_AI_Balanced.ipynb` in Jupyter and execute its cells in order.
 
-## 🗂️ Explore the repo
+<details>
+<summary><b>Repository guide</b></summary>
 
-```text
-REBUILD_AI1/
-├── app.py                          # Bilingual Streamlit interface
-├── Fursa_AI_Balanced.ipynb         # Data exploration, training & experiments
-├── student_career_success_dataset.csv
-├── data_dictionary.csv
-├── career_model.joblib             # Additional saved artifact
-├── milestone3_outputs/
-│   ├── best_placement_model.pkl    # Model loaded by app.py
-│   ├── preprocessor.pkl            # Preprocessor loaded by app.py
-│   └── ...                         # Figures and experiment outputs
-├── model_comparison.csv
-├── nested_cv_summary.csv
-├── metrics.json
-├── RESULTS_AR.md
-├── README_AR.md
-└── requirements.txt
-```
+| Path | Purpose |
+|:--|:--|
+| `app.py` | Bilingual Streamlit experience |
+| `Fursa_AI_Balanced.ipynb` | Data preparation and ML experiments |
+| `student_career_success_dataset.csv` | Project dataset |
+| `milestone3_outputs/` | Saved model, preprocessor and visual artifacts |
+| `model_comparison.csv` | Model comparison experiment |
+| `metrics.json` | Exported metrics for a reported run |
+| `README_AR.md` / `RESULTS_AR.md` | Arabic project and evaluation notes |
 
-## ⚠️ Read this before interpreting results
+</details>
 
-- **Synthetic data:** Dataset patterns may not represent actual graduates, employers, or the Jordanian labor market.
-- **Not a hiring verdict:** The displayed `predict_proba × 100` is a model score for the dataset's Placed class, **not a calibrated probability of employment or validated readiness percentage**.
-- **Educational rules:** Strengths, gaps and suggestions use chosen learning targets; they are **not extracted explanations of the ML model**.
-- **What-if ≠ causality:** Changing inputs changes a model output; it does **not** demonstrate that taking a course or internship causes employment.
-- **Experiment provenance matters:** Confirm which exported metrics and model artifacts belong to the same training run before citing numbers in a report or presentation.
+</td></tr></table>
 
-## 🌱 Where FURSA AI could go next
+---
 
-Real-graduate validation · Verified job-market skill mappings · Better-calibrated score communication · More adaptive learning recommendations
+<table><tr><td width="11%" valign="top"><h2>05</h2></td><td>
+
+## What this project does *not* claim
+
+The data is **synthetic**, not a representative study of real graduates or the Jordanian job market. The model score is **not** a calibrated employment probability, verified readiness level, or hiring recommendation.
+
+Learning targets and suggestions are **educational rules**, not explanations inferred from the classifier. Changing profile inputs in the simulator demonstrates **model response**, not a causal employment benefit.
+
+The next step is to evaluate with real-world data and, eventually, align guidance with verified job requirements.
+
+</td></tr></table>
 
 ---
 
 <div align="center">
 
-### Same journey. More possibilities. ✦
+### YOUR FUTURE ISN'T PREDICTED. IT'S BUILT.
 
-**Learn · Build · Improve**
+<sub>FURSA AI — Your Skills / Your Future</sub>
 
-Made for **FURSA AI — Your Skills, Your Future**  
-**Project team:** Rama Fathi Mahmoud Arjoub · Rama Feras Deifallah Aloudat
+<br/>
 
-<sub>Educational / research demonstration — not an employment decision system.</sub>
+**Rama Fathi Mahmoud Arjoub** &nbsp; · &nbsp; **Rama Feras Deifallah Aloudat**
 
 </div>
