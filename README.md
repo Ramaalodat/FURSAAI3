@@ -1,126 +1,173 @@
-<div align="center">
-<img src="assets/fursa-cover.svg" alt="FURSA AI — Your Skills, Your Future" width="100%"/>
+<p align="center">
+  <img src="assets/fursa_logo.png" alt="FURSA AI logo" width="325">
+</p>
 
-<br/>
+<h1 align="center">FURSA AI</h1>
 
-**A machine learning project for student career exploration**
+<p align="center"><strong>Discover your strengths. Build your next opportunity.</strong></p>
 
-[THE IDEA](#the-idea) &nbsp; / &nbsp; [THE EXPERIENCE](#the-experience) &nbsp; / &nbsp; [THE APPROACH](#the-approach) &nbsp; / &nbsp; [RUN LOCALLY](#run-locally) &nbsp; / &nbsp; [بالعربي](README_AR.md)
+<p align="center">An interactive career-exploration platform that turns your academic background, projects, and skills into <strong>actionable learning priorities</strong>—powered by machine learning.</p>
 
-</div>
+<p align="center">
+  <a href="README.md">English</a> ·
+  <a href="README_AR.md">العربية — Arabic README</a> ·
+  <a href="#getting-started">Get started</a> ·
+  <a href="#model-evaluation">Model evaluation</a>
+</p>
+
+<p align="center">
+  <img alt="Python 3.12" src="https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-Web%20App-FF4B4B?style=flat-square&logo=streamlit&logoColor=white">
+  <img alt="Machine Learning" src="https://img.shields.io/badge/ML-scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white">
+  <img alt="Languages" src="https://img.shields.io/badge/Interface-Arabic%20%7C%20English-20877A?style=flat-square">
+</p>
 
 ---
 
-<a id="the-idea"></a>
-<table><tr><td width="11%" valign="top"><h2>01</h2></td><td>
+## Overview
 
-## A degree is a beginning. Not a roadmap.
+**FURSA AI** is a university machine-learning project designed to help students and recent graduates understand where to focus their professional development.
 
-Finishing university doesn't always make the next step obvious. Which skills need attention? What can a student improve? Where should they start?
+Instead of returning only a classification score, the application connects a saved ML model with a practical, user-friendly experience: **assess your profile, identify growth areas, create an action plan, and explore what-if scenarios**.
 
-**FURSA AI** explores patterns associated with student placement in a **synthetic dataset**. A bilingual Streamlit application brings a placement-model score and a separate, transparent skill-development guide into one experience.
+> [!IMPORTANT]
+> **Educational prototype, not a hiring assessment.** The displayed score is a model output based on the training data—not a calibrated probability of employment, an official job-readiness rating, or a guarantee of getting hired.
 
-> **Not “Will I succeed?” — but “What can I work on next?”**
+## Platform preview
 
-</td></tr></table>
-
-<a id="the-experience"></a>
-<table><tr><td width="11%" valign="top"><h2>02</h2></td><td>
-
-## One profile. Several perspectives.
-
-<table>
-<tr><td width="50%"><b>PROFILE ANALYSIS</b><br/><sub>Enter 10 academic, technical, practical and professional inputs.</sub></td><td><b>MODEL SCORE</b><br/><sub>See the classifier's score for the dataset's <code>Placed</code> class.</sub></td></tr>
-<tr><td><b>SKILL DEVELOPMENT</b><br/><sub>Check eight illustrative educational targets and receive rule-based next steps.</sub></td><td><b>WHAT-IF EXPERIMENTS</b><br/><sub>Try additional projects, internships or programming improvement and compare model scores.</sub></td></tr>
-</table>
-
-<sub>Arabic / English interface · Streamlit · Educational exploration</sub>
-
-</td></tr></table>
-
-<a id="the-approach"></a>
-<table><tr><td width="11%" valign="top"><h2>03</h2></td><td>
-
-## Inside the model
-
-**DATA → PREPROCESS → COMPARE → SELECT → EXPLORE**
-
-The repository includes the study notebook, a student-career dataset, training outputs, comparison artifacts and the running Streamlit app.
-
-| Component | Implementation |
-|:--|:--|
-| Target | `Placement_Status` — Placed / Not Placed |
-| Data | Synthetic student-career dataset |
-| Form inputs | CGPA, programming, problem solving, projects, internships, certifications, communication, English proficiency, resume score, interview score |
-| Engineered features | `Soft_Skills_Average`, `Practical_Exposure_Score` |
-| Compared algorithms | Logistic Regression, Decision Tree, Random Forest, KNN |
-| Application artifacts | `milestone3_outputs/best_placement_model.pkl` and `preprocessor.pkl` |
-
-**Model evaluation is not personal assessment.** The repository contains artifacts from multiple experiments; they must not be mixed as one run. Consult [the comparison file](model_comparison.csv), [nested CV summary](nested_cv_summary.csv), [root metrics](metrics.json) and [Arabic results notes](RESULTS_AR.md) with their respective evaluation context.
-
-<div align="center"><img src="milestone3_outputs/09_learning_curve.png" alt="Learning curve from experiment outputs" width="79%"/><br/><sub>Experiment artifact included in this repository</sub></div>
-
-</td></tr></table>
-
-<a id="run-locally"></a>
-<table><tr><td width="11%" valign="top"><h2>04</h2></td><td>
-
-## Run the experience
-
-Use Python **3.11 or 3.12**.
-
-```bash
-git clone https://github.com/Ramaalodat/REBUILD_AI1.git
-cd REBUILD_AI1
-python -m pip install -r requirements.txt
-python -m streamlit run app.py --server.port 8502
-```
-
-Open **http://localhost:8502**. The application loads its bundled trained model; no retraining is needed for a local demo.
-
-To explore the experiments, open `Fursa_AI_Balanced.ipynb` in Jupyter and execute its cells in order.
+<p align="center">
+  <img src="docs/images/home.webp" alt="FURSA AI homepage showing the bilingual interface, official logo, and duck mascot" width="950">
+</p>
 
 <details>
-<summary><b>Repository guide</b></summary>
+<summary><strong>Explore the assessment and model-performance screens</strong></summary>
 
-| Path | Purpose |
-|:--|:--|
-| `app.py` | Bilingual Streamlit experience |
-| `Fursa_AI_Balanced.ipynb` | Data preparation and ML experiments |
-| `student_career_success_dataset.csv` | Project dataset |
-| `milestone3_outputs/` | Saved model, preprocessor and visual artifacts |
-| `model_comparison.csv` | Model comparison experiment |
-| `metrics.json` | Exported metrics for a reported run |
-| `README_AR.md` / `RESULTS_AR.md` | Arabic project and evaluation notes |
+### Assessment experience
+
+<img src="docs/images/assessment.webp" alt="FURSA AI profile assessment and model output" width="950">
+
+### Model-performance dashboard
+
+<img src="docs/images/model-performance.webp" alt="FURSA AI evaluation metrics and confusion matrix" width="950">
 
 </details>
 
-</td></tr></table>
+## Key features
+
+| Feature | What you can do |
+| --- | --- |
+| **Profile assessment** | Enter 10 academic, technical, and professional inputs through an easy-to-use form. |
+| **ML-powered insights** | View a model score computed by the trained classifier, with explanations of its limitations. |
+| **Skills & growth areas** | See strengths and learning opportunities based on transparent, illustrative skill targets. |
+| **Personal development plan** | Get practical suggested actions, a portfolio-project idea, and a progress checklist. |
+| **What-if simulator** | Explore how the model score responds to hypothetical changes in projects, internships, and programming skills. |
+| **Model transparency** | Explore a confusion matrix, evaluation metrics, algorithm comparisons, learning curves, and saved training plots. |
+| **Bilingual experience** | Switch between Arabic and English, with responsive layouts and a friendly duck mascot. |
+
+### From profile to action
+
+```text
+Your profile (10 inputs)
+          |
+          v
+Saved preprocessing + feature engineering
+          |
+          v
+Constrained Logistic Regression classifier
+          |
+          +--> Exploratory model score
+          |
+          +--> Educational skill-target comparisons
+                        |
+                        v
+              Development action plan
+                        |
+                        v
+             Progress tracking + what-if lab
+```
+
+The **career-area preference** personalizes project suggestions only; it is **not** used as a model input.
+
+## Model evaluation
+
+The application uses **Logistic Regression**, selected with an emphasis on **Balanced Accuracy**. A documented constraint in the updated model prevents the score from decreasing solely because English proficiency changes from **Basic → Intermediate → Advanced**, while other inputs stay unchanged.
+
+The model was refitted using the saved training split. The previous model is kept for comparison.
+
+### Results on the saved test split
+
+| Metric | Updated model |
+| :--- | ---: |
+| Accuracy | **78.43%** |
+| Balanced Accuracy | **73.96%** |
+| Macro F1 | **71.44%** |
+| ROC AUC | **80.98%** |
+
+**Evaluation details:** 9,966 test records · classification threshold **0.44** · results taken from [`english_monotonicity_audit.json`](english_monotonicity_audit.json).
+
+> **Interpretation:** These are retrospective results on a test split that was reviewed during development. They are **not** fresh, independent external validation. The positive-English constraint is a documented design assumption, **not evidence of a causal hiring effect**.
+
+For the training experiments, algorithm comparison, and other figures, see [`Fursa_AI_Balanced.ipynb`](Fursa_AI_Balanced.ipynb), [`model_comparison.csv`](model_comparison.csv), and [`milestone3_outputs/`](milestone3_outputs/).
+
+## Getting started
+
+### Requirements
+
+- Python **3.12**
+- Git
+- Internet access for the initial package installation
+
+### Installation
+
+```bash
+git clone https://github.com/Ramaalodat/Fursa_AI_Balanced.git
+cd Fursa_AI_Balanced
+python -m pip install -r requirements.txt
+```
+
+### Run the app
+
+```bash
+python -m streamlit run app.py --server.port 8502
+```
+
+Open **http://localhost:8502** in your browser. The application loads the included saved model and preprocessing artifacts; **retraining is not required** to use the website.
+
+The project is currently intended to run locally. The localhost address is **not a public deployment link**.
+
+## Project structure
+
+```text
+Fursa_AI_Balanced/
+├── app.py                         # Streamlit interface and interactions
+├── model_report.py                # Model-evaluation calculations
+├── train_monotonic_english.py     # Reproducible constrained training
+├── english_monotonicity_audit.json
+├── Fursa_AI_Balanced.ipynb        # Research and modeling notebook
+├── student_career_success_dataset.csv
+├── model_comparison.csv
+├── metrics.json
+├── milestone3_outputs/            # Saved models, splits, and analysis plots
+├── assets/                        # Official logo, mascot illustrations, UI styles
+├── docs/images/                   # Application screenshots for this README
+├── .streamlit/config.toml
+├── requirements.txt
+├── README_AR.md
+└── README.md
+```
+
+## Responsible use and limitations
+
+- Skill gaps are derived from **illustrative educational targets**, not model feature attribution or verified employer requirements.
+- The what-if simulator demonstrates **model sensitivity**, not a causal effect of completing an internship or project.
+- The dataset's representativeness for graduates in Jordan and its original provenance have **not** been independently established.
+- Saved experiment summaries may reflect different development runs. The updated-model results above are explicitly sourced from the monotonicity audit.
+- Treat the output as a **starting point for learning decisions**, never as a basis to accept or reject applicants.
 
 ---
 
-<table><tr><td width="11%" valign="top"><h2>05</h2></td><td>
+<p align="center"><strong>FURSA AI — Learn. Improve. Move forward.</strong></p>
 
-## What this project does *not* claim
+<p align="center">Developed as an academic AI and Data Science project.</p>
 
-The data is **synthetic**, not a representative study of real graduates or the Jordanian job market. The model score is **not** a calibrated employment probability, verified readiness level, or hiring recommendation.
-
-Learning targets and suggestions are **educational rules**, not explanations inferred from the classifier. Changing profile inputs in the simulator demonstrates **model response**, not a causal employment benefit.
-
-The next step is to evaluate with real-world data and, eventually, align guidance with verified job requirements.
-
-</td></tr></table>
-
----
-
-<div align="center">
-
-### YOUR FUTURE ISN'T PREDICTED. IT'S BUILT.
-
-<sub>FURSA AI — Your Skills / Your Future</sub>
-
-<br/>
-
-**Rama Fathi Mahmoud Arjoub** &nbsp; · &nbsp; **Rama Feras Deifallah Aloudat**
-
-</div>
+<p align="center"><a href="README_AR.md">Arabic documentation</a> · <a href="Fursa_AI_Balanced.ipynb">Explore the notebook</a></p>
